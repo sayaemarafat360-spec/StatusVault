@@ -242,7 +242,6 @@ fun SavedItemsGrid(
                     onDelete = { onDelete(item) }
                 )
             }
-            }
         }
     }
 }

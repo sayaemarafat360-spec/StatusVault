@@ -394,7 +394,6 @@ fun VaultGrid(
                     onDelete = { onDelete(item) }
                 )
             }
-            }
         }
     }
 }
