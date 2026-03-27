@@ -9,11 +9,11 @@ workflows:
     scripts:
       - name: Check Gradle configuration
         script: |
+          chmod +x ./gradlew
           ./gradlew --version
       
       - name: Build Debug APK
         script: |
-          chmod +x ./gradlew
           ./gradlew assembleDebug --no-daemon --build-cache --parallel
     
     artifacts:
@@ -29,11 +29,11 @@ workflows:
     scripts:
       - name: Check Gradle configuration
         script: |
+          chmod +x ./gradlew
           ./gradlew --version
       
-      - name: Build Release APK (Unsigned)
+      - name: Build Release APK
         script: |
-          chmod +x ./gradlew
           ./gradlew assembleRelease --no-daemon --build-cache --parallel
     
     artifacts:
