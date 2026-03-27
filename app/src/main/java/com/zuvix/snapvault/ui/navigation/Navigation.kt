@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.NavType
+import androidx.navigation.NamedNavArgument
 import com.zuvix.snapvault.ui.screens.home.HomeScreen
 import com.zuvix.snapvault.ui.screens.home.HomeViewModel
 import com.zuvix.snapvault.ui.screens.onboarding.OnboardingScreen

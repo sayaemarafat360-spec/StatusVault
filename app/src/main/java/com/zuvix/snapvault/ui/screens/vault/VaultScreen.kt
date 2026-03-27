@@ -445,7 +445,7 @@ fun VaultItemCard(
             }
             
             // Delete menu
-            AnimatedVisibility(
+            this@Box.AnimatedVisibility(
                 visible = showMenu,
                 enter = fadeIn(),
                 exit = fadeOut(),

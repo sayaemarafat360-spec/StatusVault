@@ -341,7 +341,7 @@ fun SavedItemCard(
             }
             
             // Action menu overlay
-            AnimatedVisibility(
+            this@Box.AnimatedVisibility(
                 visible = showMenu,
                 enter = fadeIn(),
                 exit = fadeOut(),
