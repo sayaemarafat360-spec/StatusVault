@@ -19,14 +19,6 @@ workflows:
     
     artifacts:
       - app/build/outputs/apk/debug/**/*.apk
-    
-    publishing:
-      email:
-        recipients:
-          - $GMAIL_ADDRESS
-        notify:
-          success: true
-          failure: true
 
   release-apk:
     name: Release APK Build
@@ -48,11 +40,3 @@ workflows:
     
     artifacts:
       - app/build/outputs/apk/release/**/*.apk
-    
-    publishing:
-      email:
-        recipients:
-          - $GMAIL_ADDRESS
-        notify:
-          success: true
-          failure: true
