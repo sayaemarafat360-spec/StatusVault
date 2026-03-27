@@ -42,7 +42,7 @@ class PreviewViewModel @Inject constructor(
         false
     )
     
-    val isRewardedAdReady = adManager.isRewardedReady
+    val isRewardedAdReady = adManager.isRewardedReady()
     val isAdLoading = adManager.isRewardedLoading
     
     private var statusId: String = savedStateHandle["statusId"] ?: ""

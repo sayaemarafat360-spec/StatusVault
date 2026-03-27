@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -59,10 +60,11 @@ fun PreviewScreen(
     statusId: String,
     onBack: () -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle()
-    val isRewardedAdReady by viewModel.isRewardedAdReady.collectAsStateWithLifecycle()
-    val isAdLoading by viewModel.isAdLoading.collectAsStateWithLifecycle()
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val isRewardedAdReady by viewModel.isRewardedAdReady.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val isAdLoading by viewModel.isAdLoading.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
     val context = LocalContext.current
     
     // Get Activity reference for ads

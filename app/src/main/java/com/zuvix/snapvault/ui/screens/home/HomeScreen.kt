@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -64,7 +65,6 @@ import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -79,6 +79,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -108,8 +109,9 @@ fun HomeScreen(
     onStatusClick: (String) -> Unit,
     onSettingsClick: () -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle()
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -207,7 +209,7 @@ fun HomeScreen(
             text = {
                 Column {
                     LinearProgressIndicator(
-                        progress = { uiState.bulkSaveProgress.toFloat() / uiState.bulkSaveTotal.coerceAtLeast(1) },
+                        progress = uiState.bulkSaveProgress.toFloat() / uiState.bulkSaveTotal.coerceAtLeast(1),
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(8.dp))
@@ -661,7 +663,7 @@ fun LoadingContent() {
         )
         val progress by animateLottieCompositionAsState(
             composition = composition,
-            iterations = androidx.compose.animation.core.InfiniteRepeatationSpec
+            iterations = androidx.compose.animation.core.InfiniteRepeatableSpec
         )
         
         LottieAnimation(

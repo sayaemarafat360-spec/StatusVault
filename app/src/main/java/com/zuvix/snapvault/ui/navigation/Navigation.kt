@@ -5,11 +5,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.Lifecycle
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import androidx.navigation.type.NamedNavArgument
+import androidx.navigation.NamedNavArgument
+import androidx.navigation.type.StringType
 import com.zuvix.snapvault.ui.screens.home.HomeScreen
 import com.zuvix.snapvault.ui.screens.home.HomeViewModel
 import com.zuvix.snapvault.ui.screens.onboarding.OnboardingScreen
@@ -43,7 +46,8 @@ fun SnapVaultNavigation(
     ) {
         composable(Screen.Onboarding.route) {
             val viewModel: OnboardingViewModel = hiltViewModel()
-            val onboardingShown by viewModel.onboardingShown.collectAsStateWithLifecycle()
+            val lifecycle = LocalLifecycleOwner.current.lifecycle
+            val onboardingShown by viewModel.onboardingShown.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
             
             LaunchedEffect(onboardingShown) {
                 if (onboardingShown) {
@@ -80,7 +84,7 @@ fun SnapVaultNavigation(
         
         composable(
             route = Screen.Preview.route,
-            arguments = listOf(navArgument("statusId") { defaultValue = "" })
+            arguments = listOf(navArgument("statusId") { type = StringType(); defaultValue = "" })
         ) { backStackEntry ->
             val viewModel: PreviewViewModel = hiltViewModel()
             val statusId = backStackEntry.arguments?.getString("statusId") ?: ""

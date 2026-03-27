@@ -120,7 +120,7 @@ class VaultViewModel @Inject constructor(
                 isLoading = true
             )
             
-            val items = repository.vaultItems.value
+            val items = repository.vaultItems.first()
             
             _uiState.value = _uiState.value.copy(
                 vaultItems = items,
@@ -133,7 +133,7 @@ class VaultViewModel @Inject constructor(
         viewModelScope.launch {
             repository.deleteSavedStatus(item)
             _uiState.value = _uiState.value.copy(
-                vaultItems = repository.vaultItems.value
+                vaultItems = repository.vaultItems.first()
             )
         }
     }

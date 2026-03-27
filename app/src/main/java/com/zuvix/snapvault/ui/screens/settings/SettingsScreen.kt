@@ -257,7 +257,7 @@ fun PremiumCard(
                 )
                 val progress by animateLottieCompositionAsState(
                     composition = composition,
-                    iterations = androidx.compose.animation.core.InfiniteRepeatationSpec
+                    iterations = androidx.compose.animation.core.InfiniteRepeatableSpec
                 )
                 
                 LottieAnimation(

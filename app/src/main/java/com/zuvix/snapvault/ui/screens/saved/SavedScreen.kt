@@ -61,6 +61,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -87,8 +88,9 @@ fun SavedScreen(
     onBack: () -> Unit,
     onVaultClick: () -> Unit
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle()
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
     
     val tabs = listOf(
         stringResource(R.string.saved_title),
