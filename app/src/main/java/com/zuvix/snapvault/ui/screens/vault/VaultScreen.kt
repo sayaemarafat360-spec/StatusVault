@@ -394,6 +394,7 @@ fun VaultGrid(
                     onDelete = { onDelete(item) }
                 )
             }
+            }
         }
     }
 }
@@ -445,12 +446,7 @@ fun VaultItemCard(
             }
             
             // Delete menu
-            this@Box.AnimatedVisibility(
-                visible = showMenu,
-                enter = fadeIn(),
-                exit = fadeOut(),
-                modifier = Modifier.align(Alignment.BottomCenter)
-            ) {
+            if (showMenu) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()

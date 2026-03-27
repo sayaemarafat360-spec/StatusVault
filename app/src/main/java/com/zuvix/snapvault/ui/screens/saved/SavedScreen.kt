@@ -242,6 +242,7 @@ fun SavedItemsGrid(
                     onDelete = { onDelete(item) }
                 )
             }
+            }
         }
     }
 }
@@ -341,12 +342,7 @@ fun SavedItemCard(
             }
             
             // Action menu overlay
-            this@Box.AnimatedVisibility(
-                visible = showMenu,
-                enter = fadeIn(),
-                exit = fadeOut(),
-                modifier = Modifier.align(Alignment.BottomCenter)
-            ) {
+            if (showMenu) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
