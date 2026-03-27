@@ -63,7 +63,7 @@ fun PreviewScreen(
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     val uiState by viewModel.uiState.collectAsStateWithLifecycle(lifecycle = lifecycle)
     val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(lifecycle = lifecycle)
-    val isRewardedAdReady by viewModel.isRewardedAdReady.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isRewardedAdReady = viewModel.isRewardedAdReady
     val isAdLoading by viewModel.isAdLoading.collectAsStateWithLifecycle(lifecycle = lifecycle)
     val context = LocalContext.current
     

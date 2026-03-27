@@ -11,9 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import androidx.navigation.NamedNavArgument
-import androidx.navigation.type.StringType
-import androidx.navigation.type.type
+import androidx.navigation.NavType
 import com.zuvix.snapvault.ui.screens.home.HomeScreen
 import com.zuvix.snapvault.ui.screens.home.HomeViewModel
 import com.zuvix.snapvault.ui.screens.onboarding.OnboardingScreen
@@ -85,7 +83,7 @@ fun SnapVaultNavigation(
         
         composable(
             route = Screen.Preview.route,
-            arguments = listOf(navArgument("statusId") { type = StringType; defaultValue = "" })
+            arguments = listOf(navArgument("statusId") { type = NavType.StringType; defaultValue = "" })
         ) { backStackEntry ->
             val viewModel: PreviewViewModel = hiltViewModel()
             val statusId = backStackEntry.arguments?.getString("statusId") ?: ""
