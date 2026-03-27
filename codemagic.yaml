@@ -14,6 +14,7 @@ workflows:
       
       - name: Build Debug APK
         script: |
+          chmod +x ./gradlew
           ./gradlew assembleDebug
       
     artifacts:
@@ -42,6 +43,7 @@ workflows:
       
       - name: Build Release APK
         script: |
+          chmod +x ./gradlew
           ./gradlew assembleRelease
       
     artifacts:
