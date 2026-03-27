@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Colors -->
+    <color name="background">#0F0F0F</color>
+    <color name="surface">#1A1A1A</color>
+    <color name="surface_variant">#252525</color>
+    <color name="accent">#25D366</color>
+    <color name="accent_dark">#1DA851</color>
+    <color name="accent_light">#4DE08A</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_tertiary">#707070</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Special -->
+    <color name="new_badge">#25D366</color>
+    <color name="video_overlay">#80000000</color>
+    <color name="ripple">#20FFFFFF</color>
+    <color name="divider">#1AFFFFFF</color>
+    
+    <!-- Premium Gradient -->
+    <color name="premium_start">#FFD700</color>
+    <color name="premium_end">#FFA500</color>
+    
+    <!-- System bars -->
+    <color name="status_bar">#0F0F0F</color>
+    <color name="navigation_bar">#0F0F0F</color>
+</resources>

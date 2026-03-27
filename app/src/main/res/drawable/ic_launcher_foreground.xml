@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Vault/Safe icon -->
+    <group
+        android:translateX="27"
+        android:translateY="27">
+        
+        <!-- Main body -->
+        <path
+            android:fillColor="#25D366"
+            android:pathData="M27,8L27,8c-2.2,0 -4,1.8 -4,4v28c0,2.2 1.8,4 4,4h28c2.2,0 4,-1.8 4,-4V12c0,-2.2 -1.8,-4 -4,-4H27z"/>
+        
+        <!-- Inner circle (dial) -->
+        <path
+            android:fillColor="#0F0F0F"
+            android:pathData="M41,26m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"/>
+        
+        <!-- Dial marker -->
+        <path
+            android:fillColor="#25D366"
+            android:pathData="M41,22v4l3,3"/>
+        
+        <!-- Handle -->
+        <path
+            android:fillColor="#1DA851"
+            android:pathData="M34,40h14v4h-14z"/>
+    </group>
+</vector>

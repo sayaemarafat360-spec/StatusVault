@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SnapVault: Status Saver</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_welcome">Welcome to SnapVault</string>
+    <string name="onboarding_subtitle">Save your favorite WhatsApp statuses with ease</string>
+    <string name="onboarding_step1_title">Watch Statuses</string>
+    <string name="onboarding_step1_desc">Open WhatsApp and view the statuses you want to save</string>
+    <string name="onboarding_step2_title">Return to SnapVault</string>
+    <string name="onboarding_step2_desc">Come back to the app – we\'ll detect them automatically</string>
+    <string name="onboarding_step3_title">Save &amp; Organize</string>
+    <string name="onboarding_step3_desc">Preview, save, and organize your favorite statuses</string>
+    <string name="get_started">Get Started</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    
+    <!-- Home Screen -->
+    <string name="home_title">Statuses</string>
+    <string name="no_statuses_title">No statuses found yet</string>
+    <string name="no_statuses_desc">Open WhatsApp, watch some statuses, then come back here to save them.</string>
+    <string name="open_whatsapp">Open WhatsApp</string>
+    <string name="refresh">Refresh</string>
+    <string name="new_statuses_found">✨ %d new statuses found</string>
+    <string name="images_tab">Images</string>
+    <string name="videos_tab">Videos</string>
+    
+    <!-- Preview Screen -->
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="share">Share</string>
+    <string name="favorite">Favorite</string>
+    <string name="unfavorite">Unfavorite</string>
+    <string name="move_to_vault">Move to Vault</string>
+    <string name="delete">Delete</string>
+    
+    <!-- Saved Screen -->
+    <string name="saved_title">Saved</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="vault_title">Vault</string>
+    <string name="no_saved_items">No saved items yet</string>
+    <string name="no_favorites">No favorites yet</string>
+    <string name="no_vault_items">Vault is empty</string>
+    <string name="save_some_statuses">Save some statuses first!</string>
+    <string name="mark_as_favorite">Mark items as favorite from Saved tab</string>
+    <string name="move_to_vault_hint">Move items to vault from Saved tab</string>
+    
+    <!-- Vault -->
+    <string name="vault_pin_title">Enter PIN</string>
+    <string name="vault_pin_desc">Enter your 4-digit PIN to access vault</string>
+    <string name="vault_setup_title">Set Up Vault PIN</string>
+    <string name="vault_setup_desc">Create a 4-digit PIN to protect your vault</string>
+    <string name="vault_confirm_pin">Confirm PIN</string>
+    <string name="pin_incorrect">Incorrect PIN</string>
+    <string name="pin_mismatch">PINs don\'t match</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="premium_title">Go Premium</string>
+    <string name="premium_desc">Remove ads &amp; unlock Vault</string>
+    <string name="premium_feature">Premium Feature</string>
+    <string name="upgrade_to_premium">Upgrade to Premium</string>
+    <string name="rate_app">Rate App</string>
+    <string name="share_app">Share App</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="app_version">App Version</string>
+    
+    <!-- Permissions -->
+    <string name="permission_title">Allow Access</string>
+    <string name="permission_desc">SnapVault needs access to photos and videos to detect and save WhatsApp statuses.</string>
+    <string name="allow">Allow</string>
+    <string name="permission_denied">Permission required to access statuses</string>
+    
+    <!-- AdMob Test IDs -->
+    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_rewarded_id">ca-app-pub-3940256099942544/5224354917</string>
+    
+    <!-- Misc -->
+    <string name="loading">Loading…</string>
+    <string name="error_occurred">Something went wrong</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_confirm">Delete this item?</string>
+    <string name="bulk_save_progress">Saving %d of %d…</string>
+    <string name="bulk_save_complete">Saved %d items successfully!</string>
+    <string name="watch_ad_to_save">Watch ad to continue saving</string>
+    <string name="whatsapp_not_found">WhatsApp not installed</string>
+    <string name="disclaimer">This app is not affiliated with WhatsApp. Users are responsible for content they save.</string>
+    
+    <!-- Premium features list -->
+    <string name="premium_benefit_1">Remove all ads</string>
+    <string name="premium_benefit_2">Access to Hidden Vault</string>
+    <string name="premium_benefit_3">Priority support</string>
+    <string name="premium_benefit_4">Faster thumbnail loading</string>
+    
+    <!-- Notifications -->
+    <string name="notification_new_statuses_title">New Statuses Available!</string>
+    <string name="notification_new_statuses_text">%d new statuses waiting for you</string>
+    <string name="notification_new_statuses_big_text">You have %d new statuses from WhatsApp. Open SnapVault to preview and save them before they disappear!</string>
+    <string name="notification_action_open">Open</string>
+    <string name="notification_action_dismiss">Dismiss</string>
+    <string name="notification_count_format">%d statuses</string>
+    <string name="notification_reminder_title">Time to Check Statuses!</string>
+    <string name="notification_download_complete">Status Saved!</string>
+    <string name="notification_bulk_complete">%d statuses saved!</string>
+    <string name="notification_saving">Saving status…</string>
+    
+    <!-- Smart Reminders -->
+    <string name="reminder_morning_check">Good morning! Check out the new WhatsApp statuses while having your coffee ☕</string>
+    <string name="reminder_evening_check">Evening check! Your friends might have posted new statuses 🌅</string>
+    <string name="reminder_active_user">You\'re a status-saving pro! Don\'t miss today\'s updates 📱</string>
+    <string name="reminder_regular_user">New statuses might be waiting! Check them out 👀</string>
+    <string name="reminder_generic">Don\'t let those statuses disappear! Open SnapVault to save them ✨</string>
+    
+    <!-- Ad related -->
+    <string name="ad_loading">Loading ad…</string>
+    <string name="ad_watch_to_save">Watch a short ad to save this status</string>
+    <string name="ad_watch_to_bulk_save">Watch a short ad to save %d statuses</string>
+    <string name="ad_thanks_for_watching">Thanks for watching!</string>
+    <string name="ad_skip">Skip (Premium)</string>
+    
+    <!-- New status badge -->
+    <string name="new_badge">NEW</string>
+</resources>
