@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.util
+package com.zuvix.snapvault.util
 
 import android.content.Context
 import androidx.datastore.core.DataStore

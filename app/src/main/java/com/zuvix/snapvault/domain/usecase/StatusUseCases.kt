@@ -1,7 +1,7 @@
-package com.snaphubpro.zuvixapp.domain.usecase
+package com.zuvix.snapvault.domain.usecase
 
-import com.snaphubpro.zuvixapp.data.model.StatusItem
-import com.snaphubpro.zuvixapp.data.repository.StatusRepository
+import com.zuvix.snapvault.data.model.StatusItem
+import com.zuvix.snapvault.data.repository.StatusRepository
 import javax.inject.Inject
 
 class LoadStatusesUseCase @Inject constructor(

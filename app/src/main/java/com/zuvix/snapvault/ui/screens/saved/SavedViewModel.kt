@@ -1,9 +1,9 @@
-package com.snaphubpro.zuvixapp.ui.screens.saved
+package com.zuvix.snapvault.ui.screens.saved
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.snaphubpro.zuvixapp.ads.AdManager
-import com.snaphubpro.zuvixapp.data.model.SavedStatus
+import com.zuvix.snapvault.ads.AdManager
+import com.zuvix.snapvault.data.model.SavedStatus
 import com.zuvix.snapvault.data.repository.StatusRepository
 import com.zuvix.snapvault.data.repository.Stats
 import com.zuvix.snapvault.util.PreferencesManager

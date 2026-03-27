@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.data.local
+package com.zuvix.snapvault.data.local
 
 import android.content.Context
 import android.graphics.Bitmap

@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.ui.theme
+package com.zuvix.snapvault.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

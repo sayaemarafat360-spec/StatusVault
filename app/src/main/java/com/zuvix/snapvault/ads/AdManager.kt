@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.ads
+package com.zuvix.snapvault.ads
 
 import android.app.Activity
 import android.content.Context

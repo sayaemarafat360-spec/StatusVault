@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.ui.screens.onboarding
+package com.zuvix.snapvault.ui.screens.onboarding
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing

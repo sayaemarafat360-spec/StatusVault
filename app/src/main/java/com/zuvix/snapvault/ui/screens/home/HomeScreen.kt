@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.ui.screens.home
+package com.zuvix.snapvault.ui.screens.home
 
 import android.app.Activity
 import android.Manifest

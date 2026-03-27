@@ -1,9 +1,9 @@
-package com.snaphubpro.zuvixapp.data.repository
+package com.zuvix.snapvault.data.repository
 
 import android.graphics.Bitmap
 import android.net.Uri
 import android.util.Log
-import com.snaphubpro.zuvixapp.data.local.FileManager
+import com.zuvix.snapvault.data.local.FileManager
 import com.zuvix.snapvault.data.local.StatusScanner
 import com.zuvix.snapvault.data.local.VideoThumbnailExtractor
 import com.zuvix.snapvault.data.local.database.*

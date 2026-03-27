@@ -1,4 +1,4 @@
-package com.snaphubpro.zuvixapp.util
+package com.zuvix.snapvault.util
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.widget.Toast
 import androidx.core.content.FileProvider
-import com.snaphubpro.zuvixapp.R
+import com.zuvix.snapvault.R
 import java.io.File
 
 fun Context.openWhatsApp(): Boolean {
