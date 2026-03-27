@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SnapVault: Status Saver</string>
+    <string name="app_name">SnapVault Pro: HD Status Saver</string>
     
     <!-- Onboarding -->
     <string name="onboarding_welcome">Welcome to SnapVault</string>

@@ -1,10 +1,10 @@
-package com.zuvix.snapvault.ui.screens.preview
+package com.snaphubpro.zuvixapp.ui.screens.preview
 
 import android.app.Activity
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zuvix.snapvault.ads.AdManager
+import com.snaphubpro.zuvixapp.ads.AdManager
 import com.zuvix.snapvault.data.model.StatusItem
 import com.zuvix.snapvault.data.repository.StatusRepository
 import com.zuvix.snapvault.service.notification.NotificationEngine

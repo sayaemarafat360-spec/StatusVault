@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.ui.screens.saved
+package com.snaphubpro.zuvixapp.ui.screens.saved
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState

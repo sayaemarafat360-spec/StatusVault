@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.data.model
+package com.snaphubpro.zuvixapp.data.model
 
 import android.net.Uri
 import android.os.Parcelable

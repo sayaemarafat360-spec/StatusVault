@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.ui.screens.vault
+package com.snaphubpro.zuvixapp.ui.screens.vault
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState

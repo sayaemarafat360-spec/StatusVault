@@ -1,8 +1,8 @@
-package com.zuvix.snapvault.data.local.database
+package com.snaphubpro.zuvixapp.data.local.database
 
 import android.net.Uri
 import androidx.room.*
-import com.zuvix.snapvault.data.model.MediaType
+import com.snaphubpro.zuvixapp.data.model.MediaType
 
 @Entity(tableName = "saved_statuses")
 data class SavedStatusEntity(

@@ -1,9 +1,9 @@
-package com.zuvix.snapvault.ui.screens.vault
+package com.snaphubpro.zuvixapp.ui.screens.vault
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zuvix.snapvault.data.model.SavedStatus
-import com.zuvix.snapvault.data.repository.StatusRepository
+import com.snaphubpro.zuvixapp.data.model.SavedStatus
+import com.snaphubpro.zuvixapp.data.repository.StatusRepository
 import com.zuvix.snapvault.util.PreferencesManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

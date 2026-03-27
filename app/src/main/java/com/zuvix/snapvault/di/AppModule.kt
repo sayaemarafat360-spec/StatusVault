@@ -1,9 +1,9 @@
-package com.zuvix.snapvault.di
+package com.snaphubpro.zuvixapp.di
 
 import android.content.Context
 import androidx.room.Room
 import androidx.work.WorkManager
-import com.zuvix.snapvault.ads.AdManager
+import com.snaphubpro.zuvixapp.ads.AdManager
 import com.zuvix.snapvault.data.local.FileManager
 import com.zuvix.snapvault.data.local.StatusScanner
 import com.zuvix.snapvault.data.local.VideoThumbnailExtractor

@@ -1,60 +1,58 @@
 workflows:
-  # Debug Workflow
-  SnapVault-Debug:
-    name: SnapVault Debug
-    max_build_duration: 30
+  debug-apk:
+    name: Debug APK Build
+    max_build_duration: 120
+    instance_type: linux_x2
     environment:
       java: 17
-      groups:
-        - google_play
+      vars:
+        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
     scripts:
-      - name: Set up local.properties
+      - name: Check Gradle configuration
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          ./gradlew --version
       
       - name: Build Debug APK
         script: |
-          gradle wrapper --gradle-version 8.2
           chmod +x ./gradlew
-          ./gradlew assembleDebug
-      
+          ./gradlew assembleDebug --no-daemon --build-cache --parallel
+    
     artifacts:
-      - app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/apk/debug/**/*.apk
     
     publishing:
       email:
         recipients:
-          - your-email@example.com
+          - $GMAIL_ADDRESS
         notify:
           success: true
           failure: true
 
-  # Release Workflow
-  SnapVault-Release:
-    name: SnapVault Release
-    max_build_duration: 30
+  release-apk:
+    name: Release APK Build
+    max_build_duration: 120
+    instance_type: linux_x2
     environment:
       java: 17
-      groups:
-        - google_play
+      vars:
+        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
     scripts:
-      - name: Set up local.properties
+      - name: Check Gradle configuration
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          ./gradlew --version
       
-      - name: Build Release APK
+      - name: Build Release APK (Unsigned)
         script: |
-          gradle wrapper --gradle-version 8.2
           chmod +x ./gradlew
-          ./gradlew assembleRelease
-      
+          ./gradlew assembleRelease --no-daemon --build-cache --parallel
+    
     artifacts:
-      - app/build/outputs/apk/release/*.apk
+      - app/build/outputs/apk/release/**/*.apk
     
     publishing:
       email:
         recipients:
-          - your-email@example.com
+          - $GMAIL_ADDRESS
         notify:
           success: true
           failure: true

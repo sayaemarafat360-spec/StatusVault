@@ -1,8 +1,8 @@
-package com.zuvix.snapvault.ui.screens.onboarding
+package com.snaphubpro.zuvixapp.ui.screens.onboarding
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zuvix.snapvault.util.PreferencesManager
+import com.snaphubpro.zuvixapp.util.PreferencesManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

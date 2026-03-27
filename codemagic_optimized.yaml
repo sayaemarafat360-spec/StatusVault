@@ -1,0 +1,101 @@
+workflows:
+  debug-build:
+    name: Debug APK Build
+    max_build_duration: 120
+    instance_type: linux_x2
+    environment:
+      java: 17
+      groups:
+        - google_play_service
+      vars:
+        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
+    scripts:
+      - name: Install dependencies
+        script: |
+          ./gradlew --version
+      
+      - name: Run linter
+        script: |
+          ./gradlew lint --no-daemon
+        ignore_failure: true
+      
+      - name: Build Debug APK
+        script: |
+          ./gradlew assembleDebug --no-daemon --build-cache --parallel
+    artifacts:
+      - 'app/build/outputs/apk/debug/**/*.apk'
+    publishing:
+      email:
+        recipients:
+          - $GMAIL_ADDRESS
+        notify:
+          success: true
+          failure: true
+
+  release-build:
+    name: Release APK Build
+    max_build_duration: 120
+    instance_type: linux_x2
+    environment:
+      java: 17
+      groups:
+        - google_play_service
+      vars:
+        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
+    scripts:
+      - name: Install dependencies
+        script: |
+          ./gradlew --version
+      
+      - name: Run linter
+        script: |
+          ./gradlew lint --no-daemon
+        ignore_failure: true
+      
+      - name: Build Release APK (unsigned)
+        script: |
+          ./gradlew assembleRelease --no-daemon --build-cache --parallel
+    artifacts:
+      - 'app/build/outputs/apk/release/**/*.apk'
+    publishing:
+      email:
+        recipients:
+          - $GMAIL_ADDRESS
+        notify:
+          success: true
+          failure: true
+
+  production-release:
+    name: Production Release (Signed APK)
+    max_build_duration: 120
+    instance_type: linux_x2
+    environment:
+      java: 17
+      groups:
+        - google_play_service
+        - keystore_credentials
+      vars:
+        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
+    scripts:
+      - name: Install dependencies
+        script: |
+          ./gradlew --version
+      
+      - name: Build Release APK (unsigned)
+        script: |
+          ./gradlew assembleRelease --no-daemon
+      
+      - name: Sign APK (Optional - add keystore setup)
+        script: |
+          echo "Signing is configured in Codemagic advanced settings"
+          echo "Add keystore_credentials group with CM_KEYSTORE_PATH and CM_KEY_ALIAS"
+        ignore_failure: true
+    artifacts:
+      - 'app/build/outputs/apk/release/**/*.apk'
+    publishing:
+      email:
+        recipients:
+          - $GMAIL_ADDRESS
+        notify:
+          success: true
+          failure: true

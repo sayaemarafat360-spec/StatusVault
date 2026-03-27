@@ -1,4 +1,4 @@
-package com.zuvix.snapvault
+package com.snaphubpro.zuvixapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

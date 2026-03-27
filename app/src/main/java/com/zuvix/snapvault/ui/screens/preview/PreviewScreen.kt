@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.ui.screens.preview
+package com.snaphubpro.zuvixapp.ui.screens.preview
 
 import android.app.Activity
 import androidx.compose.animation.AnimatedVisibility

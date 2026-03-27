@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.data.local.database
+package com.snaphubpro.zuvixapp.data.local.database
 
 import androidx.room.TypeConverter
 

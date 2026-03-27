@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.service.notification
+package com.snaphubpro.zuvixapp.service.notification
 
 import android.app.Notification
 import android.app.NotificationChannel

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.zuvix.snapvault"
+    namespace = "com.snaphubpro.zuvixapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.snapvault.zuvixapp"
+        applicationId = "com.snaphubpro.zuvixapp"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -29,7 +29,7 @@ android {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            resValue("string", "app_name", "SnapVault Debug")
+            resValue("string", "app_name", "SnapVault Pro Debug")
         }
         release {
             isDebuggable = false
@@ -39,7 +39,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            resValue("string", "app_name", "SnapVault: Status Saver")
+            resValue("string", "app_name", "SnapVault Pro: HD Status Saver")
         }
     }
 
@@ -101,9 +101,6 @@ dependencies {
 
     // Coil for image loading
     implementation("io.coil-kt:coil-compose:2.5.0")
-
-    // Lottie animations
-    implementation("com.airbnb.android:lottie-compose:6.3.0")
 
     // Media3 for video playback
     implementation("androidx.media3:media3-exoplayer:1.2.1")

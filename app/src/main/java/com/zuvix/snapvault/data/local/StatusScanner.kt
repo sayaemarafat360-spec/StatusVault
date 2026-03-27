@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.data.local
+package com.snaphubpro.zuvixapp.data.local
 
 import android.content.Context
 import android.net.Uri

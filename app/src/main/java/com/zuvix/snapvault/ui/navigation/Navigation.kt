@@ -1,4 +1,4 @@
-package com.zuvix.snapvault.ui.navigation
+package com.snaphubpro.zuvixapp.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

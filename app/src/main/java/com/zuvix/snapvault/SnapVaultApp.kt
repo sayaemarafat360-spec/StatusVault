@@ -1,4 +1,4 @@
-package com.zuvix.snapvault
+package com.snaphubpro.zuvixapp
 
 import android.app.Application
 import com.google.android.gms.ads.MobileAds
