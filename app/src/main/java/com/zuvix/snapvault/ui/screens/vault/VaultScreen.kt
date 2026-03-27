@@ -27,7 +27,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
@@ -73,15 +73,15 @@ import com.zuvix.snapvault.ui.theme.Surface
 import com.zuvix.snapvault.ui.theme.TextPrimary
 import com.zuvix.snapvault.ui.theme.TextSecondary
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun VaultScreen(
     viewModel: VaultViewModel,
     onBack: () -> Unit
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(lifecycle = lifecycle)
     
     Scaffold(
         topBar = {
@@ -444,7 +444,7 @@ fun VaultItemCard(
             }
             
             // Delete menu
-            AnimatedVisibility(
+            this@Column.AnimatedVisibility(
                 visible = showMenu,
                 enter = fadeIn(),
                 exit = fadeOut(),
@@ -527,7 +527,7 @@ fun LoadingContent() {
         )
         val progress by animateLottieCompositionAsState(
             composition = composition,
-            iterations = androidx.compose.animation.core.InfiniteRepeatableSpec
+            iterations = Int.MAX_VALUE
         )
         
         LottieAnimation(

@@ -110,8 +110,8 @@ fun HomeScreen(
     onSettingsClick: () -> Unit
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(lifecycle = lifecycle)
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -663,7 +663,7 @@ fun LoadingContent() {
         )
         val progress by animateLottieCompositionAsState(
             composition = composition,
-            iterations = androidx.compose.animation.core.InfiniteRepeatableSpec
+            iterations = 1
         )
         
         LottieAnimation(

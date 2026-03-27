@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -81,7 +81,7 @@ import com.zuvix.snapvault.ui.theme.Surface
 import com.zuvix.snapvault.ui.theme.TextPrimary
 import com.zuvix.snapvault.ui.theme.TextSecondary
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun SavedScreen(
     viewModel: SavedViewModel,
@@ -89,8 +89,8 @@ fun SavedScreen(
     onVaultClick: () -> Unit
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(lifecycle = lifecycle)
     
     val tabs = listOf(
         stringResource(R.string.saved_title),
@@ -340,7 +340,7 @@ fun SavedItemCard(
             }
             
             // Action menu overlay
-            AnimatedVisibility(
+                this@Column.AnimatedVisibility(
                 visible = showMenu,
                 enter = fadeIn(),
                 exit = fadeOut(),

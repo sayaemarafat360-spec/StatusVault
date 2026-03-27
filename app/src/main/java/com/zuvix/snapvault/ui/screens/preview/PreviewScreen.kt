@@ -61,10 +61,10 @@ fun PreviewScreen(
     onBack: () -> Unit
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle(initialValue = null, lifecycle = lifecycle)
-    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
-    val isRewardedAdReady by viewModel.isRewardedAdReady.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
-    val isAdLoading by viewModel.isAdLoading.collectAsStateWithLifecycle(initialValue = false, lifecycle = lifecycle)
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isPremium by viewModel.isPremium.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isRewardedAdReady by viewModel.isRewardedAdReady.collectAsStateWithLifecycle(lifecycle = lifecycle)
+    val isAdLoading by viewModel.isAdLoading.collectAsStateWithLifecycle(lifecycle = lifecycle)
     val context = LocalContext.current
     
     // Get Activity reference for ads
