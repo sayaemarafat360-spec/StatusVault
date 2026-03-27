@@ -14,7 +14,7 @@ workflows:
       
       - name: Build Debug APK
         script: |
-          gradle wrapper --gradle-version 8.0
+          gradle wrapper --gradle-version 8.2
           chmod +x ./gradlew
           ./gradlew assembleDebug
       
@@ -44,7 +44,7 @@ workflows:
       
       - name: Build Release APK
         script: |
-          gradle wrapper --gradle-version 8.0
+          gradle wrapper --gradle-version 8.2
           chmod +x ./gradlew
           ./gradlew assembleRelease
       
