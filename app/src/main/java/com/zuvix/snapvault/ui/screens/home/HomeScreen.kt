@@ -490,7 +490,7 @@ fun StatusGrid(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun StatusItemCard(
     status: StatusItem,
