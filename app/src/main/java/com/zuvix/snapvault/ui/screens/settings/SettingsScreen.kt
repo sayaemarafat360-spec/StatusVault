@@ -46,10 +46,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.animateLottieCompositionAsState
-import com.airbnb.lottie.compose.rememberLottieComposition
+
 import com.zuvix.snapvault.BuildConfig
 import com.zuvix.snapvault.R
 import com.zuvix.snapvault.ui.theme.Accent
@@ -251,19 +248,12 @@ fun PremiumCard(
                     }
                 }
                 
-                // Lottie animation
-                val composition by rememberLottieComposition(
-                    LottieCompositionSpec.Asset("premium_crown.json")
-                )
-                val progress by animateLottieCompositionAsState(
-                    composition = composition,
-                    iterations = Int.MAX_VALUE
-                )
-                
-                LottieAnimation(
-                    composition = composition,
-                    progress = { progress },
-                    modifier = Modifier.size(80.dp)
+                // Crown icon for premium
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    contentDescription = null,
+                    modifier = Modifier.size(80.dp),
+                    tint = Background
                 )
             }
         }

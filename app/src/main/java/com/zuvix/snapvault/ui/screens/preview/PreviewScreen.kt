@@ -43,7 +43,7 @@ import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import coil.compose.AsyncImage
-import com.airbnb.lottie.compose.*
+
 import com.zuvix.snapvault.R
 import com.zuvix.snapvault.data.model.MediaType
 import com.zuvix.snapvault.ui.theme.Accent
@@ -377,21 +377,14 @@ fun ActionButton(
 
 @Composable
 fun SaveSuccessIndicator() {
-    val composition by rememberLottieComposition(
-        LottieCompositionSpec.Asset("save_success.json")
-    )
-    val progress by animateLottieCompositionAsState(
-        composition = composition,
-        iterations = 1
-    )
-    
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
-            modifier = Modifier.size(80.dp)
+        Icon(
+            imageVector = Icons.Default.Check,
+            contentDescription = null,
+            modifier = Modifier.size(80.dp),
+            tint = Accent
         )
         
         Text(

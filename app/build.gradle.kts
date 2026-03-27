@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.snaphubpro.zuvixapp"
+    namespace = "com.zuvix.snapvault"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.snaphubpro.zuvixapp"
+        applicationId = "com.zuvix.snapvault"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

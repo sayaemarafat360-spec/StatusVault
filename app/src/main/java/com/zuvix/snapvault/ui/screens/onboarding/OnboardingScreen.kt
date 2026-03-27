@@ -42,10 +42,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.animateLottieCompositionAsState
-import com.airbnb.lottie.compose.rememberLottieComposition
+
 import com.zuvix.snapvault.ui.theme.Accent
 import com.zuvix.snapvault.ui.theme.Background
 import com.zuvix.snapvault.ui.theme.TextPrimary
@@ -54,8 +51,7 @@ import kotlinx.coroutines.launch
 
 data class OnboardingPage(
     val title: String,
-    val description: String,
-    val lottieFile: String
+    val description: String
 )
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -66,18 +62,15 @@ fun OnboardingScreen(
     val pages = listOf(
         OnboardingPage(
             title = "Watch Statuses",
-            description = "Open WhatsApp and view the statuses you want to save. Only viewed statuses can be detected.",
-            lottieFile = "onboarding_step1.json"
+            description = "Open WhatsApp and view the statuses you want to save. Only viewed statuses can be detected."
         ),
         OnboardingPage(
             title = "Return to SnapVault",
-            description = "Come back to the app – we'll automatically detect the statuses you viewed in WhatsApp.",
-            lottieFile = "onboarding_step2.json"
+            description = "Come back to the app – we'll automatically detect the statuses you viewed in WhatsApp."
         ),
         OnboardingPage(
             title = "Save & Organize",
-            description = "Preview, save, and organize your favorite statuses. Create a vault for private items!",
-            lottieFile = "onboarding_step3.json"
+            description = "Preview, save, and organize your favorite statuses. Create a vault for private items!"
         )
     )
     
@@ -191,25 +184,6 @@ fun OnboardingPageContent(
     page: OnboardingPage,
     isVisible: Boolean
 ) {
-    var hasAnimated by remember { mutableStateOf(false) }
-    
-    LaunchedEffect(isVisible) {
-        if (isVisible) {
-            hasAnimated = true
-        }
-    }
-    
-    val composition by rememberLottieComposition(
-        LottieCompositionSpec.Asset(page.lottieFile)
-    )
-    
-    val progress by animateLottieCompositionAsState(
-        composition = composition,
-        iterations = if (hasAnimated && isVisible) 1 else 1,
-        isPlaying = isVisible,
-        speed = 1f
-    )
-    
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -217,14 +191,16 @@ fun OnboardingPageContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Lottie animation
+        // Placeholder icon instead of Lottie animation
         Box(
-            modifier = Modifier.size(280.dp)
+            modifier = Modifier.size(280.dp),
+            contentAlignment = Alignment.Center
         ) {
-            LottieAnimation(
-                composition = composition,
-                progress = { progress },
-                modifier = Modifier.fillMaxSize()
+            androidx.compose.material3.Icon(
+                imageVector = androidx.compose.material.icons.filled.CheckCircle,
+                contentDescription = null,
+                modifier = Modifier.size(120.dp),
+                tint = Accent
             )
         }
         

@@ -60,10 +60,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.animateLottieCompositionAsState
-import com.airbnb.lottie.compose.rememberLottieComposition
+
 import com.zuvix.snapvault.R
 import com.zuvix.snapvault.data.model.SavedStatus
 import com.zuvix.snapvault.ui.theme.Accent
@@ -162,18 +159,11 @@ fun PinEntryContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("vault_lock.json")
-        )
-        val progress by animateLottieCompositionAsState(
-            composition = composition,
-            iterations = 1
-        )
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
-            modifier = Modifier.size(120.dp)
+        Icon(
+            imageVector = Icons.Filled.Lock,
+            contentDescription = null,
+            modifier = Modifier.size(120.dp),
+            tint = PremiumStart
         )
         
         Spacer(modifier = Modifier.height(24.dp))
@@ -352,15 +342,11 @@ fun VaultGrid(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            val composition by rememberLottieComposition(
-                LottieCompositionSpec.Asset("empty_vault.json")
-            )
-            val progress by animateLottieCompositionAsState(composition)
-            
-            LottieAnimation(
-                composition = composition,
-                progress = { progress },
-                modifier = Modifier.size(160.dp)
+            Icon(
+                imageVector = Icons.Outlined.Lock,
+                contentDescription = null,
+                modifier = Modifier.size(160.dp),
+                tint = TextSecondary
             )
             
             Spacer(modifier = Modifier.height(24.dp))
@@ -482,15 +468,11 @@ fun PremiumRequiredContent() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("premium_lock.json")
-        )
-        val progress by animateLottieCompositionAsState(composition)
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
-            modifier = Modifier.size(160.dp)
+        Icon(
+            imageVector = Icons.Filled.Lock,
+            contentDescription = null,
+            modifier = Modifier.size(160.dp),
+            tint = PremiumStart
         )
         
         Spacer(modifier = Modifier.height(24.dp))
@@ -518,17 +500,8 @@ fun LoadingContent() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("loading.json")
-        )
-        val progress by animateLottieCompositionAsState(
-            composition = composition,
-            iterations = Int.MAX_VALUE
-        )
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
+        CircularProgressIndicator(
+            color = Accent,
             modifier = Modifier.size(100.dp)
         )
     }

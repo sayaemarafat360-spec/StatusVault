@@ -597,15 +597,11 @@ fun PermissionRequestContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("permission.json")
-        )
-        val progress by animateLottieCompositionAsState(composition)
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
-            modifier = Modifier.size(200.dp)
+        Icon(
+            imageVector = Icons.Filled.Settings,
+            contentDescription = null,
+            modifier = Modifier.size(200.dp),
+            tint = Accent
         )
         
         Spacer(modifier = Modifier.height(24.dp))
@@ -647,17 +643,8 @@ fun LoadingContent() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("loading.json")
-        )
-        val progress by animateLottieCompositionAsState(
-            composition = composition,
-            iterations = 1
-        )
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
+        CircularProgressIndicator(
+            color = Accent,
             modifier = Modifier.size(150.dp)
         )
     }
@@ -675,18 +662,11 @@ fun EmptyContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        val composition by rememberLottieComposition(
-            LottieCompositionSpec.Asset("empty_state.json")
-        )
-        val progress by animateLottieCompositionAsState(
-            composition = composition,
-            iterations = 1
-        )
-        
-        LottieAnimation(
-            composition = composition,
-            progress = { progress },
-            modifier = Modifier.size(200.dp)
+        Icon(
+            imageVector = Icons.Outlined.Image,
+            contentDescription = null,
+            modifier = Modifier.size(200.dp),
+            tint = TextSecondary
         )
         
         Spacer(modifier = Modifier.height(24.dp))
