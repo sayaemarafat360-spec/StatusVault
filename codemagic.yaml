@@ -14,6 +14,7 @@ workflows:
       
       - name: Build Debug APK
         script: |
+          dos2unix gradlew
           chmod +x ./gradlew
           ./gradlew assembleDebug
       
@@ -43,6 +44,7 @@ workflows:
       
       - name: Build Release APK
         script: |
+          dos2unix gradlew
           chmod +x ./gradlew
           ./gradlew assembleRelease
       
