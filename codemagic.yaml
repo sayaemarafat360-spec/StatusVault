@@ -4,18 +4,11 @@ workflows:
     max_build_duration: 120
     environment:
       java: 17
-      vars:
-        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
     scripts:
-      - name: Check Gradle configuration
-        script: |
-          chmod +x ./gradlew
-          ./gradlew --version
-      
       - name: Build Debug APK
         script: |
-          ./gradlew assembleDebug --no-daemon --build-cache --parallel
-    
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/**/*.apk
 
@@ -24,17 +17,10 @@ workflows:
     max_build_duration: 120
     environment:
       java: 17
-      vars:
-        GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=512m"
     scripts:
-      - name: Check Gradle configuration
-        script: |
-          chmod +x ./gradlew
-          ./gradlew --version
-      
       - name: Build Release APK
         script: |
-          ./gradlew assembleRelease --no-daemon --build-cache --parallel
-    
+          chmod +x ./gradlew
+          ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/apk/release/**/*.apk
